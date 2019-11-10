@@ -23,7 +23,13 @@ class RomanNumberToIntegerConverterTests(unittest.TestCase):
     def test_when_passed_a_single_invalid_roman_numeral_returns_an_error_message(self):
         self.assertEqual(RNIC.convert("j"),"That is not a roman numeral")
         
-    
+    def test_convert_when_passed_two_valid_roman_numerals_with_higher_value_in_the_front_return_equivalent_value(self):
+        self.assertEqual(RNIC.convert("vi"),6)
+        self.assertEqual(RNIC.convert("Xii"),12)
+        
+    def test_convert_when_passed_two_valid_roman_numerals_with_lower_value_in_the_front_return_equivalent_value(self):
+        self.assertEqual(RNIC.convert("iv"),4)
+        self.assertEqual(RNIC.convert("dM"),950)
     
 
 
